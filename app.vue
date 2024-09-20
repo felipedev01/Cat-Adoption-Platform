@@ -1,5 +1,5 @@
 <template>
-  <div>rtc
+  <div>
     <NuxtPage/>
   </div>
 </template>

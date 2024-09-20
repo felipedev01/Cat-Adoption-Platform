@@ -1,29 +1,56 @@
-
-
 <template>
-  <div class="flex items-center justify-center min-h-screen bg-main text-white">
-    <div class="max-w-md w-full space-y-8">
-      <div>
-        <h2 class="mt-6 text-center text-3xl font-extrabold">Welcome to the Cat Adoption Panel</h2>
+  <div class="h-screen flex items-center justify-center bg-gray-50">
+    <div class="flex bg-white rounded-lg shadow-lg w-full max-w-5xl h-5/6">
+      <!-- Coluna da imagem -->
+      <div class="w-1/2 flex items-center justify-center bg-main rounded-l-lg h-full relative">
+        <div class="text-center">
+          <img src="../assets/images/Cat-image.png" alt="Cat Image" class="absolute inset-0 object-cover w-full h-full rounded-l-lg">
+          <div class="relative z-10">
+            <h1 class="text-white text-2xl font-bold">Welcome to the Cat Adoption Panel</h1>
+          </div>
+        </div>
       </div>
-      <form class="mt-8 space-y-6" @submit.prevent="loginAdmin">
-        <div class="rounded-md shadow-sm">
-          <div>
-            <label for="username" class="sr-only">Username</label>
-            <input v-model="username" id="username" name="username" type="text" autocomplete="username" required class="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-t-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm" placeholder="Enter your username">
+      <!-- Coluna do formulário de login -->
+      <div class="w-1/2 p-16 flex items-center justify-center h-full">
+        <div class="w-full">
+          <div class="flex justify-center mb-4">
+            <!-- <img src="/logo.png" alt="Cat Adoption Platform Logo" class="w-12 h-12"> -->
           </div>
-          <div>
-            <label for="password" class="sr-only">Password</label>
-            <input v-model="password" id="password" name="password" type="password" autocomplete="current-password" required class="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-b-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm" placeholder="Enter your password">
-          </div>
+          <h2 class="text-3xl font-bold text-center text-textPrimary mb-6">Login</h2>
+          <form @submit.prevent="loginAdmin" class="space-y-6">
+            <div>
+              <label for="username" class="block text-sm font-medium text-textPrimary">Username</label>
+              <input
+                id="username"
+                v-model="username"
+                type="text"
+                required
+                class="appearance-none block w-full px-3 py-2 border border-stroke rounded-md placeholder-placeholder text-textPrimary focus:outline-none focus:ring-main focus:border-main sm:text-sm"
+                placeholder="Enter the user name"
+              />
+            </div>
+            <div>
+              <label for="password" class="block text-sm font-medium text-textPrimary">Password</label>
+              <input
+                id="password"
+                v-model="password"
+                type="password"
+                required
+                class="appearance-none block w-full px-3 py-2 border border-stroke rounded-md placeholder-placeholder text-textPrimary focus:outline-none focus:ring-main focus:border-main sm:text-sm"
+                placeholder="Enter your password"
+              />
+            </div>
+            <div>
+              <button
+                type="submit"
+                class="w-full py-2 px-4 bg-main text-white font-medium rounded-md hover:bg-purple-800 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-main"
+              >
+                Login
+              </button>
+            </div>
+          </form>
         </div>
-
-        <div>
-          <button type="submit" class="w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-success hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500">
-            Login
-          </button>
-        </div>
-      </form>
+      </div>
     </div>
   </div>
 </template>
@@ -35,7 +62,6 @@ const username = ref('')
 const password = ref('')
 
 function loginAdmin() {
-  // A função de login será configurada com Supabase
-  console.log('Login function for admin')
+  console.log('Tentativa de login:', username.value, password.value)
 }
 </script>
