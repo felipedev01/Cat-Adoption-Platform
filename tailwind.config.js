@@ -17,6 +17,9 @@ module.exports = {
         danger: '#E03131',
         success: '#08D580',
       },
+      backgroundImage: {
+        'paw-pattern': "url('../assets/images/Background.png')",
+      },
       fontFamily: {
         inter: ['Inter', 'sans-serif'],
       },
