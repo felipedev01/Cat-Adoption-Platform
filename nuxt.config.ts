@@ -1,5 +1,6 @@
 export default defineNuxtConfig({
-  css: ['~/assets/css/main.css'],  // Certifique-se de apontar para o arquivo CSS correto
+  // Certifique-se de apontar para o arquivo CSS correto
+  css: ['~/assets/css/main.css'],
 
   // Se precisar de configurações extras de PostCSS
   postcss: {
@@ -9,4 +10,13 @@ export default defineNuxtConfig({
     },
     
   },
+
+  runtimeConfig: {
+    public: {
+      supabaseUrl: process.env.SUPABASE_URL,
+      supabaseKey: process.env.SUPABASE_KEY
+    }
+  },
+  
+  compatibilityDate: '2024-09-21',
 })
